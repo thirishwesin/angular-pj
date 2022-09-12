@@ -1,0 +1,52 @@
+<html>
+<body>
+<div>
+  <div class="table-responsive" *ngIf="cartProducts.length >0">
+
+    <table class="table table-bordered table-hover">
+      <thead class='thead'>
+        <tr>
+          <th>No</th>
+
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quatity</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of cartProducts;index as i">
+          <td>{{i+1}}</td>
+                   
+          <td>{{list.name}}</td>
+          <td>{{list.price}}</td>
+          <td>
+          <button class="btn btn-primary" (click) = "increaseProduct(list)">+</button>
+          <span> {{list.order_qty}} </span>
+          <button class="btn btn-danger" (click) = "decreaseProduct(list)">-</button>
+          </td>
+          <td>{{list.price * list.order_qty | currency : 'USD'}}</td>
+          <td>
+            <button
+              class="btn btn-danger"
+              (click)="deleteProduct(list.id)"
+            >
+              Remove Item From Cart
+            </button>
+          </td>
+      
+        </tr>
+        <tr>
+          <td colspan="6">
+            <button class="btn btn-primary td_l" (click) = "checkout(cartProducts)">CheckOut</button>
+        </td>
+      </tr>
+      </tbody>
+  
+    </table>
+  </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+<div class="container" *ngIf="product$ | async as product">
+  <div class="row mt-5">
+   
+      <img [src]="product.img"class="img-fluid" alt="" id="img" style="width: 300px;">
+   
+  
+      <div class="container mt-4">
+        <h5>{{product.name}}</h5>
+        <p class="">Item Price: {{product.price}}</p>
+      
+    </div>
+  </div>
+  <div class="mt-4">
+    <button class="btn btn-primary me-3" (click)="addToCart(product)">Add Cart</button>
+  </div>
+</div>
+

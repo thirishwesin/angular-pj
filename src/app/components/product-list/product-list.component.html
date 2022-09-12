@@ -1,0 +1,47 @@
+<html>
+  <body>
+<div>
+ 
+    <div class="flex-container">
+    
+      <!-- <div class="flex-items">
+        <p>Item Code: {{p.id}}</p>
+        <p>Item Name:{{p.name}}</p>
+        <p>Price: {{p.price}}</p>
+        <p>
+          
+          Qty: {{p.qty}}
+          
+        </p>
+      </div> -->
+      <table class="table table-hover table-hover">
+        <thead class='thead'>
+          <tr>
+            <th>No</th>
+            <th>Item Photo</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products;index as i">
+            <td>{{i+1}}</td>
+            <td><img [src]="p?.img" class="card-image-top rounded-top" alt="" width="100px" height="100px"></td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.qty}}</td>
+            <td>
+              <a class="btn btn-primary btn-sm" [routerLink]="[p.id]">
+               Detail
+              </a>
+            </td>
+          </tr>
+        </tbody>
+    
+      </table>
+    </div>
+  </div>
+</body>
+</html>

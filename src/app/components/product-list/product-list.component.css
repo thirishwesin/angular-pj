@@ -1,0 +1,14 @@
+.product-list{
+  margin-bottom: 10px;
+}
+button.btn{
+  margin:30px;
+}
+.flex-container {
+  display:flex;
+}
+.flex-items{
+  flex-direction: row;
+  flex:1;
+  justify-content: space-between;
+}
